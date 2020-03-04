@@ -1,15 +1,10 @@
 ---
 kind: pipeline
 type: docker
-name: linux-amd64
-
-platform:
-  arch: amd64
-  os: linux
+name: build python-oracle
 
 steps:
 - name: test
   image: golang:1.13.0
   commands:
-  - echo 'test'
-  
+    - echo 'test'
