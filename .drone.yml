@@ -12,3 +12,4 @@ steps:
   image: golang:1.13.0
   commands:
   - echo 'test'
+  
