@@ -1,0 +1,12 @@
+sudo: true
+dist: trusty
+
+jobs:
+  include:
+    - stage: build docker image
+      script:
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker build -t python3-cx-oracle .
+      - docker images
+      - docker tag python3-cx-oracle $DOCKER_USERNAME/python3-cx-oracle
+      - docker push $DOCKER_USERNAME/python3-cx-oracle
